@@ -1,0 +1,65 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     labor-neg-data-weka.filters.unsupervised.attribute.Remove-R1,4,6-10,15-16
+Instances:    57
+Attributes:   8
+              wage-increase-first-year
+              wage-increase-second-year
+              cost-of-living-adjustment
+              statutory-holidays
+              vacation
+              longterm-disability-assistance
+              contribution-to-dental-plan
+              class
+Test mode:    25-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+wage-increase-first-year <= 2.5: bad (15.27/2.27)
+wage-increase-first-year > 2.5
+|   longterm-disability-assistance = yes
+|   |   statutory-holidays <= 10
+|   |   |   wage-increase-first-year <= 3: bad (2.0)
+|   |   |   wage-increase-first-year > 3: good (3.99)
+|   |   statutory-holidays > 10: good (25.67)
+|   longterm-disability-assistance = no
+|   |   vacation = below_average: bad (5.09/1.09)
+|   |   vacation = average: good (2.64/1.0)
+|   |   vacation = generous: good (2.34)
+
+Number of Leaves  : 	7
+
+Size of the tree : 	12
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          48               84.2105 %
+Incorrectly Classified Instances         9               15.7895 %
+Kappa statistic                          0.6323
+Mean absolute error                      0.2302
+Root mean squared error                  0.3823
+Relative absolute error                 50.112  %
+Root relative squared error             79.6999 %
+Total Number of Instances               57     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,650    0,054    0,867      0,650    0,743      0,646    0,792     0,670     bad
+                 0,946    0,350    0,833      0,946    0,886      0,646    0,799     0,856     good
+Weighted Avg.    0,842    0,246    0,845      0,842    0,836      0,646    0,796     0,791     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 13  7 |  a = bad
+  2 35 |  b = good
+

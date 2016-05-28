@@ -1,0 +1,75 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     labor-neg-data-weka.filters.unsupervised.attribute.Remove-R1,4,6-10,15-16
+Instances:    57
+Attributes:   8
+              wage-increase-first-year
+              wage-increase-second-year
+              cost-of-living-adjustment
+              statutory-holidays
+              vacation
+              longterm-disability-assistance
+              contribution-to-dental-plan
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: bad, good
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.779  * (normalized) wage-increase-first-year
+ +       1.426  * (normalized) wage-increase-second-year
+ +      -0.1418 * (normalized) cost-of-living-adjustment=none
+ +       0.6623 * (normalized) cost-of-living-adjustment=tcf
+ +      -0.5204 * (normalized) cost-of-living-adjustment=tc
+ +       1.316  * (normalized) statutory-holidays
+ +      -0.2747 * (normalized) vacation=below_average
+ +      -0.3141 * (normalized) vacation=average
+ +       0.5888 * (normalized) vacation=generous
+ +      -1.1604 * (normalized) longterm-disability-assistance=no
+ +      -0.4981 * (normalized) contribution-to-dental-plan=none
+ +      -0.0922 * (normalized) contribution-to-dental-plan=half
+ +       0.5903 * (normalized) contribution-to-dental-plan=full
+ -       0.7114
+
+Number of kernel evaluations: 962 (84.888% cached)
+
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          52               91.2281 %
+Incorrectly Classified Instances         5                8.7719 %
+Kappa statistic                          0.8096
+Mean absolute error                      0.0877
+Root mean squared error                  0.2962
+Relative absolute error                 19.1759 %
+Root relative squared error             62.03   %
+Total Number of Instances               57     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,900    0,081    0,857      0,900    0,878      0,810    0,909     0,807     bad
+                 0,919    0,100    0,944      0,919    0,932      0,810    0,909     0,920     good
+Weighted Avg.    0,912    0,093    0,914      0,912    0,913      0,810    0,909     0,881     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 18  2 |  a = bad
+  3 34 |  b = good
+

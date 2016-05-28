@@ -1,0 +1,48 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.CfsSubsetEval -P 1 -E 1
+Search:       weka.attributeSelection.GreedyStepwise -T -1.7976931348623157E308 -N -1 -num-slots 1
+Relation:     labor-neg-data
+Instances:    57
+Attributes:   17
+              duration
+              wage-increase-first-year
+              wage-increase-second-year
+              wage-increase-third-year
+              cost-of-living-adjustment
+              working-hours
+              pension
+              standby-pay
+              shift-differential
+              education-allowance
+              statutory-holidays
+              vacation
+              longterm-disability-assistance
+              contribution-to-dental-plan
+              bereavement-assistance
+              contribution-to-health-plan
+              class
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Greedy Stepwise (forwards).
+	Start set: no attributes
+	Merit of best subset found:    0.363
+
+Attribute Subset Evaluator (supervised, Class (nominal): 17 class):
+	CFS Subset Evaluator
+	Including locally predictive attributes
+
+Selected attributes: 2,3,5,11,12,13,14 : 7
+                     wage-increase-first-year
+                     wage-increase-second-year
+                     cost-of-living-adjustment
+                     statutory-holidays
+                     vacation
+                     longterm-disability-assistance
+                     contribution-to-dental-plan
+
